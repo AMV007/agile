@@ -1,15 +1,13 @@
-function agile(tickets: Tickets, developers:Developer[], manager:Manager){
+function agile(tickets: Ticket[], developers:Developer[], manager:Manager){
     while(tickets.count>0){
-        for (developer in developers){
-            if (developer.dead){
-                developers.remove(developer);
-                const newHorse: Developer = HR.hire('devloper');
-                developers.add(newHorse);
-                developer = newHorse;
-            }
-        }
 
         for (developer in developers){
+
+            if (developer.dead){
+                const newHorse: Developer = HR.hire('developer');
+                developers.indexOf(developer) = newHorse;
+            }
+
             if(developer.busy){
                 if(developer.StoryPoints > (developer.StoryPointsEstimate*5)){
                     manager.kick(developer);
