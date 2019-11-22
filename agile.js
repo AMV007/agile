@@ -5,7 +5,7 @@ function agile(tickets: Ticket[], developers:Developer[], manager:Manager){
 
             if (developer.dead){
                 const newHorse: Developer = HR.hire('developer');
-                developers.indexOf(developer) = newHorse;
+                developers[developers.indexOf(developer)] = newHorse;
             }
 
             if(developer.busy){
